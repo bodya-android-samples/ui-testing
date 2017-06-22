@@ -7,7 +7,9 @@ import android.util.Log;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class TextIdlingResource implements IdlingResource {
+class TextIdlingResource implements IdlingResource {
+
+    private static final String TAG = TextIdlingResource.class.getSimpleName();
 
     @Nullable
     private volatile ResourceCallback callback;
@@ -21,7 +23,7 @@ public class TextIdlingResource implements IdlingResource {
 
     @Override
     public boolean isIdleNow() {
-        Log.e("TextIdlingResource", "usIdleNow = " + isIdleNow.get());
+        Log.e(TAG, "usIdleNow = " + isIdleNow.get());
         return isIdleNow.get();
     }
 
@@ -32,7 +34,7 @@ public class TextIdlingResource implements IdlingResource {
 
     void setIdleState(boolean isIdleNow) {
         this.isIdleNow.set(isIdleNow);
-        Log.e("TextIdlingResource", "setIdleState = " + callback);
+        Log.e(TAG, "setIdleState = " + callback);
         if (isIdleNow && callback != null) {
             callback.onTransitionToIdle();
         }
