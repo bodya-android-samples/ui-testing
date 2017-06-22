@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Idling Sample</string>
+    <string name="textToBeChanged">Testing idle resource</string>
+    <string name="modify_text">Inverse it!</string>
+    <string name="type_for_test">Type what you like to inverse it</string>
+    <string name="waiting_msg">Waiting for load</string>
+
+</resources>
